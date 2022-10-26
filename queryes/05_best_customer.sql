@@ -1,9 +1,8 @@
 \c pizzas_factory
 
-SELECT customer.name as
-FROM customer
-JOIN pizzas ON pizzas.id = details.pizza_id
-JOIN sizes  ON sizes.id = details.size_id
-JOIN orders ON orders.id = details.order_id 
-GROUP BY customer
-ORDER BY cliente DESC;
+SELECT customers.name, SUM(quantity*unit_price) AS total
+FROM details
+JOIN orders ON orders.id = details.order_id
+JOIN customers ON customers.id = orders.customer_id
+GROUP BY customers.name
+ORDER BY total DESC;

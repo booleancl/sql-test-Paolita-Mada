@@ -1,9 +1,7 @@
 \c pizzas_factory
 
-SELECT pizzas.name as pizza,count(details.quantity_id) as cantidad
+SELECT sizes.name AS size, SUM(quantity)
 FROM details
-JOIN pizzas ON pizzas.id = details.pizza_id
-JOIN sizes  ON sizes.id = details.size_id
-JOIN orders ON orders.id = details.order_id 
-GROUP BY pizza
-ORDER BY cantidad DESC;
+JOIN sizes ON details.size_id = sizes.id
+GROUP BY size
+ORDER BY size;

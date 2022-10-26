@@ -1,6 +1,4 @@
 \c pizzas_factory
 
-SELECT value FROM prices ORDER BY value DESC LIMIT 1
-FROM prices
-GROUP BY value
-ORDER BY total DESC LIMIT 1;
+SELECT value,name FROM prices
+JOIN pizzas ON pizzas.id = prices.pizza_id ORDER BY value DESC LIMIT 1  
