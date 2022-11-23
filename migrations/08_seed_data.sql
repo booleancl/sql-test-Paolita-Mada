@@ -10,3 +10,4 @@
 \COPY addresses FROM 'C:/Users/swanm/intro_dev/sql-test-Paolita-Mada/data/addresses.csv' CSV HEADER;
 \COPY orders FROM 'C:/Users/swanm/intro_dev/sql-test-Paolita-Mada/data/orders.csv' CSV HEADER;
 \COPY details FROM 'C:/Users/swanm/intro_dev/sql-test-Paolita-Mada/data/orders_details.csv' CSV HEADER;
+
